@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("./assets/pattern-background-desktop.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    
+}
+
+.card{
+    background-color: #ffff;
+    overflow: hidden;
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.card-content *{
+    
+    text-align: center;
+}
+.card-content h2{
+    margin: 0 0 1rem;
+}
+.card-content p{
+    color: #a1b2bc;
+    margin: 0 0 1rem 0;
+}
+
+.card-content-plan{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#f8f9fe;
+    border-radius: 20px;
+    width: 90%;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.card-content-plan-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 1rem;
+}
+.card-content-plan-info-text h5{
+    font-weight: 600;
+    margin: 0 0 5px 0;
+
+
+}
+.card-content-plan-info-text h6{
+    color:#acb5ca ;
+    font-size: 12px;
+}
+.card-content-btn{
+    display: block;
+    background-color:#382ae1;
+    color: #fff;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-weight: 550;
+}
+
+.cancel{
+    background: transparent;
+    color: #acb5ca;
+}
