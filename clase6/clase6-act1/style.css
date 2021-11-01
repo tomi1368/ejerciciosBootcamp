@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+input{
+    outline: none;
+    border: none;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+body{
+    height: 100vh;
+    font-family: 'Roboto Condensed';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://picsum.photos/2880/1920?image=737");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::after{
+    content: "";
+    background-color: rgba(0, 2, 100, 0.7);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
+.formulario{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    position: relative;
+    height: 500px;
+    z-index: 1;
+    
+}
+
+.formulario::after{
+    content: "";
+    background-color: rgba(0, 201, 252, 0.1);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+h1{
+    color: #fff;
+}
+input::placeholder{
+    color: #fff;
+
+}
+input[type="text"]{
+    color: white;
+    width: 60%;
+    font-size: 1em;
+    padding: 10px;
+    background-color: rgba(78, 78, 78, 0.4);
+    border-radius: 30px;
+    position: relative;
+}
+
+input[type="submit"]{
+    width: 60%;
+    padding: 15px;
+    background-color: #007bff;
+    border-radius: 30px;
+    color: white;
+}
