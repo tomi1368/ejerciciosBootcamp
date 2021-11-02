@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #49494a;
+}
+
+
+nav{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 90px;
+    height: 98vh;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+li{
+    font-size: 20px;
+    color: #949494;
+    cursor: pointer;
+    transition: transform .3s ease-in-out, color .3s ease-in-out;
+}
+
+li:hover{
+    transform: translateX(8px);
+    color: orange;
+}
