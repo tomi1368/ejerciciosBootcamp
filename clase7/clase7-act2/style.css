@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input{
+    outline: none;
+    border: none;
+}
+
+body{
+    background-color: #1d283c;
+    font-family: "Myriad Web Pro", Helvetica, Sans-Serif;
+    font-size: .875em;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav{
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+}
+
+.logo{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 800;
+}
+
+.btn{
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.search-container{
+    margin: 20px auto;
+    position: relative;
+
+}
+
+.search-container input{
+    padding: 5px 40px;
+    width:300px;
+    color: #fff;
+    background-color: #1a324f;
+}
+
+.search-container .fa-search{
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    color: #fff;
+}
+
+
+
+.section-container{
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card{
+    padding: 10px;
+    background-color:#1a324f;
+}
+
+.card h2{
+    color:#fff;
+    margin: 5px 0 7px 0;
+}
+.card .card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card .card-info .card-info-text{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+}
+
+.active{
+    padding: 6px;
+    background-color: #054605 ;
+    color: #0da70d;
+}
+
+.active .fa-circle{
+    font-size: 10px;
+    margin: 0 6px 0 0;
+}
+
+.disabled{
+    padding: 6px;
+    background-color: #1d385a ;
+    color: #2c63a7;
+}
+
+.disabled .fa-circle{
+    font-size: 10px;
+    margin: 0 6px 0 0;
+}
