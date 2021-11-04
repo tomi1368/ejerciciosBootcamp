@@ -120,6 +120,7 @@ h2{
     width: 80%;
     padding: 10px 20px;
     border-radius: 20px;
+    box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
 }
 
 .sing-up form input[type="submit"]{
