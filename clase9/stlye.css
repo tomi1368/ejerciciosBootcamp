@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+input{
+    border: none;
+    outline: none;
+}
+
+h2{
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1.3fr 2fr;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    max-width: 1160px;
+    
+}
+
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 700px;
+    padding: 50px;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+    background-image: url("https://previews.123rf.com/images/fromod/fromod2005/fromod200500065/148324905-neumorphism-designs-simply-and-modern-background-3d-shadow-and-light-shapes-neumorphic-2020-.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sign-in > *{
+    margin: 0 0 30px 0;
+}
+.sign-in p {
+    color:gray
+}
+
+.btn{
+    margin: 10px 0 0 0;
+    text-decoration: none;
+    padding: 15px 50px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #2968c8;
+    font-weight: 700;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+}
+
+.sing-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 700px;
+    padding: 50px;
+    box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+    background-image: url("https://previews.123rf.com/images/fromod/fromod2005/fromod200500065/148324905-neumorphism-designs-simply-and-modern-background-3d-shadow-and-light-shapes-neumorphic-2020-.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.sing-up > *{
+    margin: 0 0 30px 0;
+}
+
+.sing-up ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+}
+
+.sing-up ul li{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: gray;
+    border: 3px solid gray;
+    border-radius: 50%;
+    line-height: 23px;
+}
+.sing-up ul li .fab{
+    line-height: 30px;
+}
+.sing-up h4{
+    color: gray;
+    font-weight: 400;
+}
+
+.sing-up form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.sing-up form input[type="text"],input[type="email"],input[type="password"]{
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.sing-up form input[type="submit"]{
+    font-size: 15px;
+}
+
+
+
+@media screen and (max-width:780px) {
+    /* Como tengo 100vh se corta pero en un proyecto de sitio web hay mas espacio */
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .sign-in,.sing-up{
+        height: 500px;
+    }
+}
