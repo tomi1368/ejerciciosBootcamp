@@ -1,4 +1,4 @@
-const convertEdad= edad => edad * 365.2
+const convertEdad= edad => edad * 8766
 
 
 
