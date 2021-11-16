@@ -4,11 +4,11 @@ ps.forEach(el=> el.style.backgroundColor= "green")
 
 /* Ej2 */
 let count=""
+let pa = document.createElement("p")
 
 ps.forEach(el=>{
    count += `${el.textContent.length}  `   
 })
-let pa = document.createElement("p")
 pa.textContent = count
 document.body.insertAdjacentElement("beforebegin",pa) 
 
@@ -17,6 +17,7 @@ document.body.insertAdjacentElement("beforebegin",pa)
 
 
 document.addEventListener("click", e=>{
+    console.log(e.target)
     if (e.target.matches("a")){
         e.preventDefault()
         document.body.insertAdjacentText("beforebegin",e.target.href)
