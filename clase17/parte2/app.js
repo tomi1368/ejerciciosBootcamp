@@ -49,6 +49,7 @@ a1.setAttribute("id","1")
 a2.setAttribute("id","2")
 div.style.height = "400px"
 div.style.width = "400px"
+div.style.border= "1px solid red"
 div.insertAdjacentElement("afterbegin",a1)
 div.insertAdjacentElement("afterbegin",a2)
 document.body.insertAdjacentElement("beforeend",div)
@@ -60,7 +61,6 @@ document.addEventListener("click",e=>{
         console.log(`boton ${e.target.id}/2`)
     }   
     if(e.target == div){
-        e.stopPropagation()
         div.style.backgroundColor = "red"
     }
 })

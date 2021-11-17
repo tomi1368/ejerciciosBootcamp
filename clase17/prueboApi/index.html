@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+</style>
+<body>
+<form method="post" action="https://tomiperro138.herokuapp.com/user/create">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="nombre" placeholder="Ingrese su nombre" autocomplete="off">
+    <label for="mail">Mail</label>
+    <input type="email" id="mail" name="email" placeholder="Ingrese Mail" autocomplete="off">
+    <label for="alias">Alias</label>
+    <input type="text" id="alias" name="alias" placeholder="Ingrese alias" autocomplete="off">
+    <label for="pass">Contraseña</label>
+    <input type="password" id="pass" name="pass">
+    <input type="submit">
+</form>
+<script src="app.js"></script>
+</body>
+</html>

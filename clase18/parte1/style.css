@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 15px 35px -5px rgb(50 88 130 / 32%);
+    background: #eef3f7;
+    gap: 15px;
+}
+
+.parte-musica{
+    display: flex;
+    width: 100%;
+}
+
+.rare{
+    width: 300px;
+    height: 300px;
+    background-image: url(https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg);
+    background-repeat: no-repeat;
+    transform: translateX(-40px);
+    box-shadow: 0px 15px 35px -5px rgb(50 88 130 / 32%);
+    border-radius: 20px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.red{
+    color: red;
+}
+
+
+li{
+    color: #acb8d0;
+    font-size: 20px;
+}
+.hidden{
+    display: none;
+}
+.perro{
+    color: #fff;
+    font-size: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 15px 35px -5px rgb(50 88 130 / 32%);
+    line-height: 10px;
+}
+
+
+.hola{
+    text-align: right;
+}
+
+.line{
+    height: 10px;
+    width: 100%;
+    background-color: #acb8d0;
+    border-radius: 5px;
+}
+h4{
+    color: #c1cbe0;
+}
+
+h3,p{
+    color: #a6b1c7;
+    font-weight: 600;
+}
