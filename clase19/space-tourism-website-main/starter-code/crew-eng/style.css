@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Oswald:wght@300&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.sectionEng{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Noto Serif', serif;
+}
+
+.sub-title-n{
+    color: grey;
+}
+.sub-title span{
+    margin: 0 20px 0 0;
+}
+.sub-title h4{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.anouEng h2{
+    color: grey;
+    font-size: 35px;
+    font-weight: 400;
+    margin: 0 0 10px;
+}
+
+.anouEng h1{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    margin: 0 0 15px;
+
+}
+.anouEng p{
+    color: #a7a5a5;
+    max-width: 500px;
+    font-size: 20px;
+    line-height: 1.1;
+    font-weight: 300;
+}
+.imgAnou{
+    align-self: flex-end;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 150px;
+    height: 100%;
+}
