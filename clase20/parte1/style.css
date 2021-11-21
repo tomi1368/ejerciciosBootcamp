@@ -4,34 +4,20 @@
     box-sizing: border-box;
 }
 
-:root{
-    --title-color: #000;
-    --text-color:#000;
-    --body-color:#fff;
-    
-    
-}
-
-body.darkTheme{
-    --title-color: #fff;
-    --text-color:#fff;
-    --body-color:#000;
-}
 
 
 
-body{
-    background-color: var(--body-color);
-    color: var(--text-color);
-}
-
-
-.clock__theme{
+.btn-dark{
     height: 30px;
     width: 30px;
     border-radius: 50%;
     background-color: var(--white-color);
     position: fixed;
-    right: 20px;
+    right: 30px;
     top: 20px;
+}
+
+.dark{
+    color: white;
+    background: #000;
 }

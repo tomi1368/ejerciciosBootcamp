@@ -8,7 +8,13 @@ const jwt = require(`bcrypt`)
 const webtoken = require(`jsonwebtoken`)
 const app = express()
 let port = process.env.PORT || 7000
-
+let users=[
+    {
+        nombre:"Tomas",
+        email:"tomi@gmail.com",
+        password:"perro"
+    }
+]
 
 app.use(methodOverride()) //Permite usar arrays y texto
 app.use(express.json())
@@ -32,11 +38,23 @@ const multerConfig = multer.diskStorage({
 
 const multerMid = multer({storage:multerConfig})    
 
-
+app.post("/creates",multerMid.single("multi"),(req,res)=>{
+    let {nombre,email,pass,alias,multi} = req.body
+    console.log(req.body)
+    let newUser = {
+        nombre,
+        alias,
+        email,
+        pass,
+        multi
+    }
+    users=[...users,newUser]
+    res.send(users)
+})
 
 
 app.get(`/`,(req,res)=>{
-    res.send(uuidv4()) //Lo ejecuto como funcion
+    res.send(users) //Lo ejecuto como funcion
 })
 
 app.post("/upload", multerMid.single(`multi`),(req,res)=>{ //en el single pongo el name del input que lo esta usando
