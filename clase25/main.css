@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    background: #f2f4ff;
+    font-family: Jost,sans-serif!important;
+}
+
+.foro{
+    width: 90%;
+    margin: 50px auto 0 auto;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+/* Aside */
+
+.side-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.feed-board{
+    height: 150px;
+    width: 250px;
+    border-radius: 15px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 30px 15px;
+    background: #9796f0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.titles{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #fff;
+}
+.tags{
+    height: auto;
+    width: 250px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+.tags ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 5px;
+    justify-content: center;
+}
+
+.tag{
+    padding: 5px 15px ;
+    text-align: center;
+    background: #f2f4ff;
+    border-radius: 10px;
+    line-height: 30px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.roadmap{
+    height: 150px;
+    width: 250px;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+}
+.roadmap-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.roadmap-title a{
+    color: rgb(35, 106, 212);
+
+}
+.roadmap ul{
+    margin: 20px 0 0 0;
+}
+.road-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 8px 0 ;
+}
+.left-side{
+    display: flex;
+    align-items: center;
+    gap:3px
+}
+.point{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: chartreuse;
+    
+}
+
+/* Foro */
+
+.foro-side{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.chang-sugg{
+    background: #373f68;
+    color: #fff;
+    display: flex;
+    padding: 15px 30px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+}
+.sugg{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.btn-add{
+    padding: 10px 20px;
+    background-color: rgb(163, 28, 163);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color .3s ease-in-out;
+}
+
+.sort-by{
+    margin: 0 0 0 10px;
+}
+
+.foro-card{
+    display: flex;
+    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    transition: transform .2s ease-in-out;
+}
+.number p{
+    cursor: pointer;
+    margin: 0 0 3px 0;
+}
+.card-imp{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.text-content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.content-tag{
+    background: #f2f4ff;
+    padding: 5px 10px;
+    text-align: center;
+    width: min-content;
+    border-radius: 5px;
+}
+
+.number{
+    padding: 10px;
+    background: #f2f4ff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.foro-card:hover{
+    transform: scale(1.02);
+}
+
+.active{
+    background-color: #7c91f9;
+    color: #fff;
+}
+
+.tag:hover{
+    background-color: #7c91f9;
+    color: #fff;
+}
+
+.btn-add:hover{
+    background-color: rgb(219, 63, 219);
+}
+
+
+@media screen and (max-width:984px) {
+    .foro{
+        margin: 200px auto 0 auto;
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 20px;
+    }
+    .side-menu{
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .feed-board{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        border-radius: 0;
+        height: 90px;
+    }
+    .chang-sugg{
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 12px;
+    }
+    .sugg{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:554px){
+    .side-menu{
+        margin: 50px auto 0 auto;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
