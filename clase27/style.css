@@ -3,6 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    overflow-x: hidden;
+}
+
 ul{
     list-style: none;
 }
@@ -42,13 +47,53 @@ nav{
     width: 30px;
     border-radius: 5px;
     background: #000;
+    transition: transform .1s ease-in-out;
+}
+.line::after{
+    content: " ";
+    top: -7px;
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: #000;
+    display: none;
+    transition: transform .1s ease-in-out;
 }
 .nav-deploy{
     position: absolute;
-    visibility: hidden;
-    height: calc(100vh - 80px);
+    background-color: #edf0f7;
+    height: 100vh;
+    width: 100%;
+    top: 80px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
 }
 
+.nav-deploy.nav-active{
+    transform: translateX(0);
+}
+.nav-links{
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+.nav-links li{
+    margin: 0 0 30px 0;
+}
+.social-links{
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+}
+.nav-deploy.active{
+    transform: translateX(0);
+}
 
 .header-title{
     height: 500px;
@@ -182,4 +227,51 @@ footer{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
     gap: 20px;
+}
+
+.hamburger.active{
+    gap: 30px;
+}
+.hamburger.active .line{
+    width: 1px;
+    height: 1px;
+
+}
+.hamburger.active .line::before{
+    transform: rotate(-45deg);
+    top: -1px;
+}
+.hamburger.active .line::after{
+    display: inline-block;
+    transform: rotate(45deg);
+    top: -1px;
+}
+
+
+
+@media screen and (max-width:800px) {
+    .header-title h1{
+        font-size: 3rem;
+        text-align: center;
+    }
+    .header-title h3{
+        font-size: 0.7rem ;
+        text-align: center;
+
+    }
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,300px);
+
+    }
+    .a,.b,.c,.d,.e,.f{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .d,.e,.f{
+        height: auto;
+    }
+    .footer{
+        grid-template-columns: 1fr;
+    }
 }
