@@ -27,11 +27,14 @@ const SearchUser = () => {
       .catch((err) => console.log(err));
   };
   return (
+    <>
+    <h2>Buscar usuario</h2>
     <form>
       <input
         onChange={(e) => setName(e.target.value)}
         type="text"
         value={name}
+        placeholder="nombre..."
       ></input>
       <input
         onClick={(e) => searchUser(e)}
@@ -40,6 +43,7 @@ const SearchUser = () => {
       ></input>
       { error ? <h2>Not Found</h2> : <Results info={data}></Results> }
     </form>
+    </>
   );
 };
 

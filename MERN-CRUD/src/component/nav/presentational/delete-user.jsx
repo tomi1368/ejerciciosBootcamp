@@ -21,10 +21,13 @@ const DeleteUser = ({ modifyUsers }) => {
       .catch((err) => console.log(err));
   };
   return (
+    <>
+    <h2>Eliminar usuario</h2>
     <form className="form">
-      <input onChange={(e) => chgEmail(e)} type="text" value={email} />
+      <input onChange={(e) => chgEmail(e)} type="text" placeholder="nombre..." value={email} />
       <input onClick={(e) => dltUser(e)} type="submit" value="ELiminar" />
     </form>
+    </>
   );
 };
 

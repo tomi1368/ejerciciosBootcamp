@@ -18,6 +18,8 @@ const ChangeUser = () => {
     .catch(err=>console.log("hola2"))
   }
   return (
+    <>
+    <h2>Modificar usuario</h2>
     <form className="form">
       <input
         onChange={(e) => chngUser(e)}
@@ -39,7 +41,9 @@ const ChangeUser = () => {
       />
       <input onClick={(e) => mdfUser(e)} type="submit" value="Modificar"/>
     </form>
+    </>
   );
+  
 };
 
 export default ChangeUser

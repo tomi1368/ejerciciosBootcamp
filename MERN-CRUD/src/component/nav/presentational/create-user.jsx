@@ -24,6 +24,8 @@ const CreateUser = ({ modifyUsers }) => {
       .catch((err) => console.log(err));
   };
   return (
+    <>
+    <h2>Crear usuario</h2>
     <form className="form">
       <input
         onChange={(e) => chngUser(e)}
@@ -45,6 +47,7 @@ const CreateUser = ({ modifyUsers }) => {
       />
       <input onClick={(e) => addUser(e)} type="submit" />
     </form>
+    </>
   );
 };
 
