@@ -1,9 +1,14 @@
 import React,{useState} from 'react'
 import { NavLink,Routes,Route } from 'react-router-dom'
 import ShowUsers from "./presentational/show-users"
+import CreateUser from './presentational/create-user'
+import DeleteUser from './presentational/delete-user'
+import ChangeUser from './presentational/modify-user'
+import SearchUser from './presentational/search-user'
 import "./styles/nav.css"
 const Navbar = ()=>{
-    const [users, setUsers] = useState([])
+    let [usuarios, setUsuarios] = useState([{nombre:" ",email:" ",password:" "}])
+    
     return( 
     <>
         <nav className="nav-bar">
@@ -21,11 +26,11 @@ const Navbar = ()=>{
         </nav>
         <section className="all-views">
             <Routes>
-                <Route index path="/" element={<ShowUsers></ShowUsers>}></Route>
-                <Route index path="/create" element></Route>
-                <Route index path="/delete" element></Route>
-                <Route index path="/modify" element> </Route>
-                <Route index path="/search" element></Route>
+                <Route index path="/" element={<ShowUsers  modifyUsers={setUsuarios} ></ShowUsers>}></Route>
+                <Route index path="/create" element={<CreateUser modifyUsers={setUsuarios}></CreateUser>}></Route>
+                <Route index path="/delete" element={<DeleteUser/>}></Route>
+                <Route index path="/modify" element={<ChangeUser/>}> </Route>
+                <Route index path="/search" element={<SearchUser></SearchUser>}></Route>
             </Routes>
         </section>
     </>

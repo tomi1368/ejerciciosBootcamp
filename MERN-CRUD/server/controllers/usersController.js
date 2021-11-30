@@ -8,23 +8,35 @@ usersRouter.get("/", async (req, res) => {
   res.send(users);
 });
 
+usersRouter.get("/:nombre", async (req, res) => {
+  let nombre = req.params.nombre
+  let user = await User.findOne({nombre});
+  if(user){
+    res.send({data:user,error:false});
+  }else{
+    res.send({found:"Not found",error:true});
+  }
+});
+
 usersRouter.post("/", (req, res) => {
   let { nombre, email, password } = req.body;
+  console.log(nombre,email,password)
   bcrypt.hash(password, SALT, async (err, hash) => {
     if (!err) {
-      let newUser = {
+      let newUser = new User ({
         nombre,
         email,
         password: hash,
-      };
+      });
       try {
-        let saveUser = await newUser.save();
-        res.sendStatus(200).statusMessage("se creo");
+        await newUser.save();
+        let newUsers = await User.find({})
+        res.send(newUsers)
       } catch (err) {
-        response.send({ error: "id incorrecto" });
+        res.send({ error: "id incorrecto" });
       }
     } else {
-      res.sendStatus(404).statusMessage("asdasd");
+      res.status(404)
     }
   });
 });
@@ -38,9 +50,21 @@ usersRouter.put("/", (req, res) => {
         email,
         password: hash,
       };
-      let fdUser = await User.findOneAndUpdate({ email }, newUser);
-      
+      await User.findOneAndUpdate({ email }, newUser);
+      let newUsers = await User.find({})
+      res.send(newUsers)
+    }else{
+      res.send({error:"nose pudo modificar"})
     }
   });
 });
+
+usersRouter.delete("/", async (req,res)=>{
+  let {email} = req.body
+  console.log(email)
+  await User.findOneAndDelete({email})
+  let newUsers = await User.find({})
+  res.send(newUsers) 
+})
+
 module.exports = usersRouter;
