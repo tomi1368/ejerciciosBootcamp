@@ -1,7 +1,9 @@
-import React from 'react'
-import { NavLink,Link,Routes,Route } from 'react-router-dom'
+import React,{useState} from 'react'
+import { NavLink,Routes,Route } from 'react-router-dom'
+import ShowUsers from "./presentational/show-users"
 import "./styles/nav.css"
 const Navbar = ()=>{
+    const [users, setUsers] = useState([])
     return( 
     <>
         <nav className="nav-bar">
@@ -17,9 +19,9 @@ const Navbar = ()=>{
                 <NavLink to="/search">Search</NavLink>
             </ul>
         </nav>
-        <section>
+        <section className="all-views">
             <Routes>
-                <Route index path="/" element></Route>
+                <Route index path="/" element={<ShowUsers></ShowUsers>}></Route>
                 <Route index path="/create" element></Route>
                 <Route index path="/delete" element></Route>
                 <Route index path="/modify" element> </Route>
