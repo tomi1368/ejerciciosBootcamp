@@ -7,7 +7,7 @@ const port = 7800;
  //Importante poner despues de la importacion de la coneccion a base de datos
 const mongoose = require("mongoose");
 const usersRouter = require("./controllers/users")
-/* const notesRouter = require("./controllers/notes") */
+const notesRouter = require("./controllers/notes")
 //Ahora con el Note puedo usar todos los metodos como find, instanciar una Nota
 
 
@@ -19,8 +19,8 @@ app.use(express.json());
 
 
 app.use("/api/users", usersRouter)
+app.use("/api/notes", notesRouter)
 
-/* app.use("/api/notes", notesRouter) */
 
 //El orden de los middlewares es muy importante
 //Lo mejor es hacer aparte los middlewares y importarlos

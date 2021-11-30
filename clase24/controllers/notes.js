@@ -1,5 +1,6 @@
 const notesRouter = require("express").Router();
 const Note = require("../models/Note");
+const User = require("../models/User");
 //Me fijo porque en el notesRouter tengo una ruta base
 //usada en notesRouter.use("/api/users", usersRouter)
 //Entonces la ruta sera /api/users/
@@ -14,8 +15,14 @@ const Note = require("../models/Note");
     }
 })  Forma con async await
  */
+
+//Segun la accion va a haber distintas acciones para la misma ruta salvo la de buscar uno solo
+
 notesRouter.get("/", (req, res) => {
-  Note.find({})
+  Note.find({}).populate("user",{
+    username:1,
+    name:1
+  })
     .then((dbres) => {
       res.send(
         dbres.map((el) => {
@@ -46,23 +53,30 @@ notesRouter.get("/findNote", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-notesRouter.post("/newNote", (req, res) => {
-  let { content, name, important } = req.body;
+notesRouter.post("/", async (req, res) => {
+  let { content, name, important, user} = req.body;
+  const userfd = await User.findById(user);
+  //Le asigno un unico usuario a la nota, y lo hago por Id del usuario
   let newNote = new Note({
     content,
     name,
     fecha: new Date(),
     important,
+    user:userfd._id
   });
-  newNote
-    .save()
-    .then((dbres) => {
-      res.send(dbres);
-    })
-    .catch((err) => res.send(err));
+  try {
+    let a = await newNote.save();
+    let {_id} = a
+    //ahora que creamos la nota la agregamos al array de notas del usuario, el en cual voy a encontrar los ids de las notas
+    userfd.notes = userfd.notes.concat(_id)
+    await userfd.save() //guardamos el usuario con las notas modificadas
+    res.send(userfd)
+  } catch (err) {
+    res.send("error");
+  }
 });
 
-notesRouter.delete("/deleteOne", (req, res, next) => {
+notesRouter.delete("/", (req, res, next) => {
   let { name } = req.body;
   Note.findOneAndDelete({
     name,
@@ -71,8 +85,8 @@ notesRouter.delete("/deleteOne", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-notesRouter.put("/changeOne", (req, res) => {
-  let { content, name, important } = req.body;
+notesRouter.put("/", (req, res) => {
+  let { content, name, important = false } = req.body;
   let newNote = {
     content,
     name,
@@ -89,4 +103,4 @@ notesRouter.put("/changeOne", (req, res) => {
     .catch((err) => res.send(err));
 });
 
-module.exports = usersRouter;
+module.exports = notesRouter;

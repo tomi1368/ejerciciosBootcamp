@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+
 body{
     overflow-x: hidden;
 }
+
 
 ul{
     list-style: none;
@@ -22,6 +24,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    overflow: hidden;
 }
 
 .hamburger{
@@ -61,22 +64,25 @@ nav{
     transition: transform .1s ease-in-out;
 }
 .nav-deploy{
-    position: absolute;
+    position: fixed;
     background-color: #edf0f7;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     top: 80px;
-    left: 0;
+    right: -100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transform: translateX(100%);
-    transition: transform .3s ease-in-out;
+    visibility:hidden;
+    opacity: 0;
+    transition: right .3s ease-in-out, visibility .1s ease-in-out, opacity .1s ease-in-out;
 }
 
 .nav-deploy.nav-active{
-    transform: translateX(0);
+    right: 0%;
+    visibility:visible;
+    opacity: 1;
 }
 .nav-links{
     font-size: 2rem;

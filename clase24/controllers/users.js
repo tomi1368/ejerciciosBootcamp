@@ -5,8 +5,9 @@ const SALT = 10;
 //Me fijo porque en el app tengo una ruta base
 //usada en app.use("/api/users", usersRouter)
 //Entonces la ruta sera /api/users/
+//Segun la accion va a haber distintas acciones para la misma ruta
 
-usersRouter.post("/create", async (req, res) => {
+usersRouter.post("/", async (req, res) => {
   const { username, name, password } = req.body;
   bcrypt.hash(password, SALT, async (err, hash) => {
     if (!err) {
@@ -24,11 +25,16 @@ usersRouter.post("/create", async (req, res) => {
 });
 
 usersRouter.get("/", async (req, res) => {
-  let users = await User.find({});
+  let users = await User.find({}).populate("notes",{ //En el segundo parametro especifico que datos me quiero traer
+    content:1,
+    fecha:1,
+    important:1,
+    _id:0 //Si no quiero el id le pongo cero pero si no lo especifico me lo trae igual
+  }); //De cada usuario creados a sus notas me trae toda la informacion. Usa el "ref" que pusimos en el Scheme.
   res.send(users);
 });
 
-usersRouter.put("/modify", async (req, res) => {
+usersRouter.put("/", async (req, res) => {
   let { username, name, password } = req.body;
   console.log(req.body)
   bcrypt.hash(password, SALT, async (err, hash) => {
